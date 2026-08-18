@@ -1,0 +1,129 @@
+/* Authoritative responsive layer — loaded after main.css. */
+img, svg { max-width: 100%; }
+
+@media (min-width: 1600px) {
+  .nav-shell, .sp-hero { width: min(1320px, calc(100% - 96px)); }
+  .sp-section, .sp-contact, .sp-footer { width: min(1200px, calc(100% - 96px)); }
+  .sp-hero { min-height: 900px; }
+}
+
+@media (max-width: 1100px) {
+  .desktop-nav { gap: 1rem; }
+  .sp-hero { grid-template-columns: minmax(0, 1.05fr) minmax(290px, .7fr); gap: 4vw; }
+  .sp-hero h1 { font-size: clamp(4.4rem, 9vw, 7rem); }
+  .editorial-work > button { grid-template-columns: 34px minmax(190px, 38%) minmax(0, 1fr); }
+  .editorial-work .project-action { grid-column: 3; justify-self: start; }
+}
+
+@media (max-width: 860px) {
+  .app-header, .app-header.is-scrolled { height: 60px; }
+  .desktop-nav, .talk-link { display: none; }
+  .menu-button { display: grid; }
+  .mobile-nav {
+    position: fixed;
+    inset: 60px 12px auto;
+    max-height: calc(100dvh - 72px);
+    padding: .65rem;
+    border: 1px solid var(--line);
+    border-radius: 22px;
+    background: color-mix(in srgb, var(--card) 92%, transparent);
+    backdrop-filter: saturate(180%) blur(24px);
+    box-shadow: var(--shadow);
+    display: grid;
+    overflow-y: auto;
+  }
+  .mobile-nav a {
+    min-height: 48px;
+    padding: 0 .9rem;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    font-size: .95rem;
+    font-weight: 600;
+  }
+  .mobile-nav a:hover { background: var(--soft); }
+  .mobile-nav .language-toggle { display: none; }
+  .sp-hero {
+    min-height: auto;
+    padding: 8.5rem 0 5.5rem;
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+  .sp-hero h1 { max-width: 760px; font-size: clamp(4.2rem, 14vw, 7.2rem); }
+  .sp-visual { width: min(100%, 620px); height: 430px; margin-inline: auto; }
+  .sp-about, .sp-heading.split { grid-template-columns: 1fr; gap: 2rem; }
+  .photo-space { width: min(100%, 540px); aspect-ratio: 4 / 3; }
+  .service-list, .skill-groups, .education-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .experience-row { grid-template-columns: minmax(100px, .25fr) minmax(0, 1fr); }
+  .experience-row button { grid-column: 2; justify-self: start; }
+  .editorial-work > button { grid-template-columns: 30px minmax(210px, 42%) minmax(0, 1fr); gap: 1rem; }
+  .sp-contact { padding: clamp(3.5rem, 8vw, 5rem); }
+}
+
+@media (max-width: 640px) {
+  .nav-shell, .sp-hero, .sp-section, .sp-contact, .sp-footer { width: calc(100% - 28px); }
+  .wordmark strong { display: none; }
+  .nav-actions { gap: .35rem; }
+  .theme-toggle, .language-toggle, .menu-button { min-width: 40px; height: 40px; padding-inline: .55rem; }
+  .sp-hero { padding-top: 7.5rem; gap: 3rem; }
+  .sp-hero h1 {
+    margin: 1rem 0 1.4rem;
+    font-size: clamp(3.2rem, 18vw, 5.5rem);
+    line-height: .88;
+    overflow-wrap: anywhere;
+  }
+  .sp-hero h2 { font-size: clamp(1.25rem, 6.3vw, 1.6rem); }
+  .sp-hero__copy > p:not(.section-label) { font-size: .98rem; }
+  .sp-actions { display: grid; grid-template-columns: 1fr; }
+  .sp-button { width: 100%; min-height: 48px; }
+  .sp-social, .contact-links { flex-wrap: wrap; row-gap: .8rem; }
+  .sp-visual { height: clamp(310px, 85vw, 390px); }
+  .visual-window { inset-inline: .6rem; }
+  .visual-code { padding: 2.2rem 1.1rem; font-size: .62rem; }
+  .visual-node { padding: .55rem .7rem; font-size: .55rem; }
+  .node-vue { right: 0; }
+  .node-python { left: 0; }
+  .sp-section { padding-block: clamp(4.5rem, 17vw, 6rem); }
+  .sp-heading h2, .sp-about h2 {
+    font-size: clamp(2.25rem, 12vw, 3.4rem);
+    overflow-wrap: anywhere;
+  }
+  .service-list, .skill-groups, .education-list { grid-template-columns: 1fr; }
+  .service-list article, .skill-groups article, .education-list article,
+  .experience-row, .editorial-work > button { padding: 1.25rem; }
+  .experience-row, .editorial-work > button { grid-template-columns: 1fr; }
+  .experience-row button, .editorial-work .project-action { grid-column: 1; justify-self: start; }
+  .editorial-work > button > span:first-child { display: none; }
+  .project-preview { grid-row: 1; min-height: 0; aspect-ratio: 3 / 2; }
+  .editorial-work h3 { font-size: clamp(1.55rem, 8vw, 2.2rem); }
+  .sp-contact { padding: 3rem 1.35rem; }
+  .sp-contact h2 { font-size: clamp(2.6rem, 14vw, 4.2rem); overflow-wrap: anywhere; }
+  .sp-footer { grid-template-columns: 1fr; gap: 1rem; }
+  .modal-backdrop { padding: 0; align-items: end; }
+  .modal-panel { width: 100%; max-height: 92dvh; border-radius: 24px 24px 0 0; }
+  .modal-body { padding: 1.25rem; overscroll-behavior: contain; }
+  .modal-skills, .project-modal-grid { grid-template-columns: 1fr; }
+  .project-modal-preview { border-radius: 14px; }
+}
+
+@media (max-width: 380px) {
+  .nav-shell, .sp-hero, .sp-section, .sp-contact, .sp-footer { width: calc(100% - 20px); }
+  .language-toggle { padding-inline: .4rem; }
+  .sp-hero h1 { font-size: clamp(2.85rem, 17vw, 4rem); }
+  .sp-social { gap: .9rem; }
+  .sp-visual { height: 290px; }
+  .visual-window header span, .node-git { display: none; }
+  .availability { right: 0; max-width: calc(100% - 1rem); }
+}
+
+@media (max-height: 500px) and (orientation: landscape) {
+  .sp-hero { min-height: auto; padding: 5rem 0 2.5rem; gap: 2rem; }
+  .sp-hero h1 { font-size: clamp(2.8rem, 8vw, 4.5rem); }
+  .sp-visual { height: 270px; }
+}
+
+@media (hover: none) {
+  .service-list article:hover, .skill-groups article:hover,
+  .education-list article:hover, .editorial-work > button:hover,
+  .visual-window:hover { transform: none; box-shadow: none; }
+}

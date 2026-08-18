@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f4f3ef" />
+    <script>
+      (() => {
+        const theme = localStorage.getItem('theme') || 'dark'
+        const dark = theme === 'dark' || (theme === 'system' && matchMedia('(prefers-color-scheme: dark)').matches)
+        document.documentElement.classList.toggle('dark', dark)
+      })()
+    </script>
+    <meta
+      name="description"
+      content="Dariel Gonell builds software, business systems, and digital products from interface to infrastructure."
+    />
+    <meta property="og:title" content="Dariel Gonell — Software Developer" />
+    <meta
+      property="og:description"
+      content="Software built around real operations, real users, and real business problems."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/og-image.svg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="canonical" href="https://darielgonell.com/" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <title>Dariel Gonell — Software Developer</title>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Dariel Gonell",
+        "jobTitle": "Software Developer",
+        "address": { "@type": "PostalAddress", "addressCountry": "DO" },
+        "knowsAbout": [
+          "Software Development",
+          "Business Systems",
+          "Web Development",
+          "Infrastructure",
+          "Databases"
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <div id="app"></div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
